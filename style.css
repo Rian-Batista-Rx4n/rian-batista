@@ -234,6 +234,17 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+@media screen and (max-width: 768px) {
+    #texto_6 {
+        text-align: center;
+        margin: auto;
+        width: 80%;
+        margin-top: 2%;
+        font-size: 3.5vw;
+        font-family: 'Courier New', Courier, monospace;
+    }
+}
+
 h1 {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -258,8 +269,8 @@ h1 {
 }
 
 #icons {
-    width: 10%;
-    margin-left: 20%;
+    width: 20%;
+    margin-left: 1%;
     text-align: center;
     margin-top: 2%;
 }
@@ -267,12 +278,12 @@ h1 {
 a {
     text-decoration: underline;
     color: white;
-    font-size: 2vw;
+    font-size: 3.3vw;
     padding: 1%;
 }
 #box{
     margin: auto;
-    width: 50%;
+    width: 60%;
     z-index: 1;
     margin-top: 1px;
 }
