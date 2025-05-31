@@ -135,15 +135,32 @@ body {
     width: 57%;
     margin-left: 35%;
     margin-top: 12%;
-    font-size: 1.7vw;
+    font-size: 200%;
     font-family: 'Courier New', Courier, monospace;
 }
 #texto_4 {
     width: 57%;
     margin-left: 35%;
     margin-top: 2%;
-    font-size: 1.7vw;
+    font-size: 200%;
     font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 768px) {
+    #texto_3 {
+        width: 57%;
+        margin-left: 35%;
+        margin-top: 12%;
+        font-size: 3.5vw;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    #texto_4 {
+        width: 90%;
+        margin: 5% auto;
+        font-size: 3.5vw;
+        text-align: justify;
+        margin-top: 12%;
+    }
 }
 
 #skills {
@@ -255,13 +272,14 @@ a {
 }
 #box{
     margin: auto;
-    width: 40%;
+    width: 50%;
     z-index: 1;
     margin-top: 1px;
 }
 
 #listas {
     margin-top: 15%;
+    text-align: center;
 }
 
 #github {
@@ -302,7 +320,7 @@ a {
     margin-top: 10%;
     padding: 0.1em;
     color: black;
-    font-size: 220%;
+    font-size: 200%;
 }
 
 #texto_8 {
