@@ -67,6 +67,9 @@ a {
     color: white;
 }
 
+h2 {
+    text-align: center;
+}
 #banner {
     display: flex;
     justify-content: space-between;
@@ -146,6 +149,7 @@ a {
     justify-content: center;
     gap: 2em;
     margin-top: 2em;
+    text-align: center;
 }
 
 .skill-box {
