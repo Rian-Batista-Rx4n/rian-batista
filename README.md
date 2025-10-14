@@ -55,7 +55,8 @@ I’m a junior fullstack developer passionate about creative technology, open-so
 
 ## 📬 Contact
 
-- **GitHub:** [github.com/Rx4n](https://github.com/Rian-Batista-Rx4n/)  
+- **GitHub:** [github.com](https://github.com/Rian-Batista-Rx4n/)
+- **Portfolio:** [www.rx4n.com](https://rian-batista-rx4n.github.io/rian-batista/)
 
 ---
 
