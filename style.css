@@ -3,6 +3,11 @@
     --xp-light-blue: #3a6ea5;
     --xp-gray: #d4d0c8;
 }
+header h1, header h2 {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
 
 html {
     width: 100%;
