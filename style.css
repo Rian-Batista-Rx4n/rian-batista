@@ -7,6 +7,7 @@ header h1, header h2 {
     position: absolute;
     left: -9999px;
     visibility: hidden;
+    font-size: 0px;
 }
 
 html {
