@@ -1,11 +1,85 @@
 // === ELEMENTOS PRINCIPAIS ===
-const menuBox = document.getElementById("menu-panel-box");
-const menuButton = document.getElementById("menu-panel");
+const startButton = document.getElementById("start-button");
+const startMenu = document.getElementById("start-menu");
+const user_pic = document.getElementById("user-pic");
+const user_name = document.getElementById("user-name");
+
 
 const date = new Date();
 const time = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 const day = date.toLocaleDateString();
 document.getElementById("date-panel").innerHTML = `${time}<br>${day}`;
+
+
+
+// CLIPPY
+
+const clippy_spawn = document.getElementById("clippy-spawn")
+
+spawn_clippy()
+
+function spawn_clippy() {
+    const date = new Date();
+    const time = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    const day = date.toLocaleDateString();
+    document.getElementById("date-panel").innerHTML = `${time}<br>${day}`;
+
+
+
+    clippy_spawn.innerHTML = `<div id="clippy-popup" class="clippy-container">
+                 <div class="clippy-message">
+                     <p>Hi there! 👋<br>I'm Clippy — looks like you're checking out Rx4n's portfolio.<br>Need a hand exploring?</p>
+                     <button id="close-clippy">✖</button>
+                 </div>
+                 <img src="images/clippy.png" alt="Clippy Assistant" class="clippy-img">
+                 
+             </div>`
+
+    document.getElementById("close-clippy").addEventListener("click", () => {
+        const clippy = document.getElementById("clippy-popup");
+        clippy.style.transition = "opacity 0.5s";
+        clippy.style.opacity = "0";
+        setTimeout(() => clippy.remove(), 500);
+
+        setTimeout(() => {
+            spawn_clippy()
+        }, 7000);
+    });
+
+    const messages = [
+      "It looks like you're reading a portfolio!",
+      "Need help navigating in the portfolio?",
+      "Do you seem interested in retro design in Rx4n's portfolio? 👀",
+      `<p>Hi there! 👋<br>I'm Clippy — looks like you're checking out Rx4n's portfolio.<br>Need a hand exploring?</p>`,
+      "Ah! Looks like you're testing a retro portfolio theme. Got the references?",
+      "It looks like you're trying to learn more about Rx4n. Want some tips?",
+      "I noticed you’re exploring! Would you like me to show you the coolest parts of the site?",
+      "This portfolio feels nostalgic... almost like Windows XP days, huh?",
+      "Beep boop! I detected high levels of creativity here 💾",
+      "Would you like to add a shortcut to Rx4n’s portfolio on your desktop? 😉",
+      "Loading some awesome projects... please stand by 🖥️",
+      "I see you enjoy retro vibes! Maybe you’re a fan of Windows 95 too?",
+      "It looks like you're trying to find inspiration. Want me to open the 'Ideas' folder?",
+      "Looks like someone pressed ALT + Nostalgia! 😄",
+      "Just a reminder — unlike the real Clippy, I *actually* work! 😉",
+      "I may be made of pixels, but I can still recognize great design!",
+      "Pro tip: Try hovering over buttons — you might find some secrets 👀",
+      "Saving changes to memory... done! (I think)",
+      "Need assistance? I promise not to crash this time 💥",
+      "Hey! Don’t forget to check the 'Projects' section — that’s where the magic happens.",
+      "System message: You seem cool. Permission to stay on your screen? ✅",
+      "This portfolio has more style than Windows XP Luna theme 🌙",
+      "I came back from 2001 just to see this masterpiece.",
+      "Press Ctrl + Awesome to continue exploring 🚀",
+      "It looks like you're admiring good UI. Want me to call the dev? Oh wait, it’s Rx4n 😎",
+    ];
+
+
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    document.querySelector(".clippy-message p").innerHTML = randomMessage;
+}
+
+
 
 
 // === COMPUTER BTN ===
@@ -22,6 +96,8 @@ const firefoxCloseBtn = document.getElementById("firefox-btn-close")
 const installerBtn = document.getElementById("installer")
 const installerMinBtn = document.getElementById("installer-btn-minimize")
 const installerCloseBtn = document.getElementById("installer-btn-close")
+
+
 
 // === COMPUTER ITENS ===
 const fileWindow = document.getElementById("file-explorer-window");
@@ -43,6 +119,15 @@ const installerTitleBar = document.getElementById("installer-title-bar")
 const installerBody = document.getElementById("installerBody")
 const upBox = document.getElementById("installer-up-box");
 
+// === MENU ITENS ===
+const inputMyComputer = document.getElementById("input-my-computer")
+const inputMyDocuments = document.getElementById("input-my-documents")
+const inputMyMusic = document.getElementById("input-my-music")
+const inputMyPictures = document.getElementById("input-my-pictures")
+
+const inputFirefox = document.getElementById("inputFirefox")
+
+
 
 // === SYSTEM VAR ===
 let menuIsOpen = false;
@@ -50,12 +135,19 @@ let explorerIcon = false;
 let firefoxIcon = false;
 let installerIcon = false;
 let actualDirectoryIndex = 0;
+let actualUser_name = `Rx4n`;
+let actualUser_img = 0;
+const totalImgs = 5;
 
-const document_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png"><a href="https://github.com/Rian-Batista-Rx4n/">GitHub.url</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png">Click On Link.txt</div>`
-const download_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png"><a href="https://github.com/Rian-Batista-Rx4n/GWS/">GWS.exe</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png"><a href="https://github.com/Rian-Batista-Rx4n/fleet-manager/">Fleet Manager.exe</a></div>`
-const music_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png">Under Construction.txt</div>`
+
+
+const document_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/internet_explorer.png"><a href="https://github.com/Rian-Batista-Rx4n/">GitHub.url</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/notepad.png">readme.txt</div>`
+const download_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/windowns_icon.png"><a href="https://github.com/Rian-Batista-Rx4n/GWS/">GWS.exe</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/windowns_icon.png"><a href="https://github.com/Rian-Batista-Rx4n/fleet-manager/">Fleet Manager.exe</a></div>`
+const music_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/notepad.png">Under Construction.txt</div>`
 const image_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png"><a href="https://www.instagram.com/rx4n.rx4n/">Instagram.png</a></div>`
-const video_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png"><a href="https://www.youtube.com/@Rx4n_">Youtube.ink</a></div>`
+const video_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/wmp.png"><a href="https://www.youtube.com/@Rx4n_">Youtube.mp4</a></div>`
+
+
 
 // -----=== EXPLORER ITEMS AND FUNCTIONS ===-----
 function documents_directory() {
@@ -79,8 +171,9 @@ function videos_directory() {
 }
 
 
+
+
 // === EVENTOS ===
-menuButton.addEventListener("click", toggleMenu);
 myComputerBtn.addEventListener("click", openExplorer);
 explorerMinBtn.addEventListener("click", toggleExplorer);
 explorerCloseBtn.addEventListener("click", closeExplorer);
@@ -93,17 +186,57 @@ installerBtn.addEventListener("click", openInstaller)
 installerMinBtn.addEventListener("click", toggleInstaller)
 installerCloseBtn.addEventListener("click", closeInstaller)
 
+inputMyComputer.addEventListener("click", openExplorer);
+inputFirefox.addEventListener("click", openFirefox);
+
+user_pic.addEventListener("click", changeUserPic)
+
+
+
+
 // === FUNÇÕES ===
 
-// =====--- Explorer ---=====
+function changeUserPic() {
+    const userPic = document.getElementById("user-pic");
+
+    // alterna o índice da imagem
+    actualUser_img = (actualUser_img + 1) % totalImgs;
+
+    // muda apenas o src da imagem
+    userPic.src = `images/user_img_${actualUser_img}.png`;
+}
 
 // Alterna o menu Iniciar
-function toggleMenu() {
-    menuIsOpen = !menuIsOpen;
-    menuBox.style.width = menuIsOpen ? "256px" : "0px";
-    menuBox.style.height = menuIsOpen ? "358px" : "0px";
-    menuBox.style.border = menuIsOpen ? "4px solid #295cd0" : "0px solid transparent";
+startButton.addEventListener("click", () => {
+    startMenu.classList.toggle("hidden");
+    user_pic.style.border = `2px solid white`
+});
+
+// Fecha ao clicar fora
+document.addEventListener("click", (e) => {
+    if (!startMenu.contains(e.target) && !startButton.contains(e.target)) {
+      startMenu.classList.add("hidden");
+    }
+});
+
+// Ações de exemplo
+document.getElementById("logoff").addEventListener("click", () => {
+    alert("Logging off Rx4n...");
+});
+
+document.getElementById("shutdown").addEventListener("click", () => {
+    alert("Shutting down system... 💻");
+});
+
+// Abrir menu de configurações
+function openSettings() {
+    alert("Settings coming soon! 🧩");
 }
+
+
+
+
+// =====--- Explorer ---=====
 
 // Abre o Explorer pela primeira vez
 function openExplorer() {
@@ -218,7 +351,7 @@ function applyExplorerStyles(isVisible) {
         } else if (actualDirectoryIndex == 4) {
             bodyArea.innerHTML = image_html
         } else if (actualDirectoryIndex == 5) {
-	    bodyArea.innerHTML = video_html
+	          bodyArea.innerHTML = video_html
         }
     } else {
         menuBar.innerHTML = "";
@@ -231,6 +364,9 @@ function applyExplorerStyles(isVisible) {
 function removeExplorerContent() {
     applyExplorerStyles(false);
 }
+
+
+
 
 // =====--- firefox ---=====
 
@@ -292,10 +428,10 @@ function applyFirefoxStyles(isVisible) {
         btn.style.fontSize = visible("14px");
     });
     if (isVisible) {
-	    firefox_html.innerHTML = `             <h2>Hello, i'm Rx4n.</h2>
+	      firefox_html.innerHTML = `             <h2>Hello, i'm Rx4n.</h2>
              <h3>Welcome to my Website!</h3>`
     } else {
-	    firefox_html.innerHTML = ``
+	      firefox_html.innerHTML = ``
     }
 
 }
@@ -305,7 +441,9 @@ function removeFirefoxContent() {
     applyFirefoxStyles(false);
 }
 
-// =====--- Rx4n Installer ---=====
+
+
+
 /* ================= INSTALLER: pages + behavior ================= */
 
 // cache elementos (se já não estiverem)
@@ -328,156 +466,154 @@ let installerInterval = null;
 
 // Atualiza visual quando abrir/fechar (mantendo compatibilidade com applyInstallerStyles)
 function applyInstallerStyles(isVisible) {
-  if (isVisible) {
-    installerWindowEl.style.width = "60vw";
-    installerWindowEl.style.height = "360px";
-    installerWindowEl.style.border = "2px solid #0a246a";
-    installerWindowEl.style.background = "#ece9d8";
-    installerWindowEl.style.opacity = "1";
-    // inicializa UI
-    goToInstallerPage(0);
-  } else {
-    installerWindowEl.style.width = "0px";
-    installerWindowEl.style.height = "0px";
-    installerWindowEl.style.border = "0px solid transparent";
-    installerWindowEl.style.background = "transparent";
-    installerWindowEl.style.opacity = "0";
-    stopInstallerProcess();
-  }
+    if (isVisible) {
+        installerWindowEl.style.width = "60vw";
+        installerWindowEl.style.height = "360px";
+        installerWindowEl.style.border = "2px solid #0a246a";
+        installerWindowEl.style.background = "#ece9d8";
+        installerWindowEl.style.opacity = "1";
+        // inicializa UI
+        goToInstallerPage(0);
+    } else {
+        installerWindowEl.style.width = "0px";
+        installerWindowEl.style.height = "0px";
+        installerWindowEl.style.border = "0px solid transparent";
+        installerWindowEl.style.background = "transparent";
+        installerWindowEl.style.opacity = "0";
+        stopInstallerProcess();
+    }
 }
 
 // abrir instalador (mantém a criação do ícone no painel como você já fazia)
 function openInstaller() {
-  if (installerIcon) return;
-  installerIcon = true;
+    if (installerIcon) return;
+    installerIcon = true;
 
-  const installerApp = document.createElement("div");
-  installerApp.className = "app-panel-icon panel-items panel-icons";
-  installerApp.id = "installer-app";
-  installerApp.innerHTML = `<img class="panel-items panel-icons" alt="Icone do Gray Wolf System" src="images/graywolf_icon.png">`;
-  appPanel.appendChild(installerApp);
+    const installerApp = document.createElement("div");
+    installerApp.className = "app-panel-icon panel-items panel-icons";
+    installerApp.id = "installer-app";
+    installerApp.innerHTML = `<img class="panel-items panel-icons" alt="Icone do Gray Wolf System" src="images/graywolf_icon.png">`;
+    appPanel.appendChild(installerApp);
 
-  installerApp.addEventListener("click", toggleInstaller);
-  applyInstallerStyles(true);
+    installerApp.addEventListener("click", toggleInstaller);
+    applyInstallerStyles(true);
 
-  // ligar listeners dos botões do instalador (apenas uma vez)
-  setupInstallerListeners();
+    // ligar listeners dos botões do instalador (apenas uma vez)
+    setupInstallerListeners();
 }
 
 // fechar instalador e limpar
 function closeInstaller() {
-  if (!installerIcon) return;
-  installerIcon = false;
-  appPanel.querySelector("#installer-app")?.remove();
-  applyInstallerStyles(false);
-  installerPageIndex = 0;
+    if (!installerIcon) return;
+    installerIcon = false;
+    appPanel.querySelector("#installer-app")?.remove();
+    applyInstallerStyles(false);
+    installerPageIndex = 0;
 }
 
 // alterna visibilidade
 function toggleInstaller() {
-  installerIcon = !installerIcon;
-  applyInstallerStyles(installerIcon);
+    installerIcon = !installerIcon;
+    applyInstallerStyles(installerIcon);
 }
 
 // configura listeners internos do instalador (Back/Next/Cancel/Checkbox)
 function setupInstallerListeners() {
-  // evita múltiplas bindings
-  btnCancel.onclick = () => { closeInstaller(); };
-  btnBack.onclick = () => { goToInstallerPage(installerPageIndex - 1); };
-  btnNext.onclick = () => {
-    if (installerPageIndex === 0) {
-      goToInstallerPage(1);
-    } else if (installerPageIndex === 1) {
-      if (!checkboxAccept.checked) {
-        alert("You must accept the terms to continue.");
-        return;
-      }
-      goToInstallerPage(2);
-      startInstallerProcess();
-    } else if (installerPageIndex === 2) {
-      // se concluído, Finish
-      if (installerProgress >= 100) {
-        closeInstaller();
-        // opcional: abrir algo após instalar
-        window.open('https://github.com/Rian-Batista-Rx4n/');
-      }
-    }
-  };
+    // evita múltiplas bindings
+    btnCancel.onclick = () => { closeInstaller(); };
+    btnBack.onclick = () => { goToInstallerPage(installerPageIndex - 1); };
+    btnNext.onclick = () => {
+        if (installerPageIndex === 0) {
+            goToInstallerPage(1);
+        } else if (installerPageIndex === 1) {
+            if (!checkboxAccept.checked) {
+              alert("You must accept the terms to continue.");
+              return;
+            }
+            goToInstallerPage(2);
+            startInstallerProcess();
+        } else if (installerPageIndex === 2) {
+            // se concluído, Finish
+            if (installerProgress >= 100) {
+              closeInstaller();
+              // opcional: abrir algo após instalar
+              window.open('https://github.com/Rian-Batista-Rx4n/');
+            }
+        }
+    };
 
-  checkboxAccept.onchange = () => {
-    btnNext.disabled = !checkboxAccept.checked;
-  };
+    checkboxAccept.onchange = () => {
+        btnNext.disabled = !checkboxAccept.checked;
+    };
 
-  // estado inicial
-  btnBack.disabled = true;
-  btnNext.disabled = false;
-  if (checkboxAccept) { checkboxAccept.checked = false; btnNext.disabled = false; }
+    // estado inicial
+    btnBack.disabled = true;
+    btnNext.disabled = false;
+    if (checkboxAccept) { checkboxAccept.checked = false; btnNext.disabled = false; }
 }
 
 // navega para a página index (0,1,2)
 function goToInstallerPage(index) {
-  installerPageIndex = Math.max(0, Math.min(2, index));
+    installerPageIndex = Math.max(0, Math.min(2, index));
 
-  // esconder todas
-  installerPage0.classList.add("hidden");
-  installerPage1.classList.add("hidden");
-  installerPage2.classList.add("hidden");
-  finishedMsg.classList.add("hidden");
+    // esconder todas
+    installerPage0.classList.add("hidden");
+    installerPage1.classList.add("hidden");
+    installerPage2.classList.add("hidden");
+    finishedMsg.classList.add("hidden");
 
-  // lógica de botões
-  btnBack.disabled = (installerPageIndex === 0);
-  btnNext.textContent = (installerPageIndex === 2) ? "Finish" : "Next";
+    // lógica de botões
+    btnBack.disabled = (installerPageIndex === 0);
+    btnNext.textContent = (installerPageIndex === 2) ? "Finish" : "Next";
 
-  if (installerPageIndex === 0) {
-    installerPage0.classList.remove("hidden");
-  } else if (installerPageIndex === 1) {
-    installerPage1.classList.remove("hidden");
-    // botão Next só ativo quando aceitar (mas deixamos não obrigatório para teste)
-    btnNext.disabled = !checkboxAccept.checked;
-  } else if (installerPageIndex === 2) {
-    installerPage2.classList.remove("hidden");
-    btnNext.disabled = true; // durante instalação desativa Finish até 100%
-  }
+    if (installerPageIndex === 0) {
+        installerPage0.classList.remove("hidden");
+    } else if (installerPageIndex === 1) {
+        installerPage1.classList.remove("hidden");
+        // botão Next só ativo quando aceitar (mas deixamos não obrigatório para teste)
+        btnNext.disabled = !checkboxAccept.checked;
+    } else if (installerPageIndex === 2) {
+        installerPage2.classList.remove("hidden");
+        btnNext.disabled = true; // durante instalação desativa Finish até 100%
+    }
 }
 
 // inicia animação/ processo de instalação
 function startInstallerProcess() {
-  installerProgress = 0;
-  updateInstallerProgress();
+    installerProgress = 0;
+    updateInstallerProgress();
 
-  // evita múltiplos intervalos
-  if (installerInterval) clearInterval(installerInterval);
-  installerInterval = setInterval(() => {
-    installerProgress += Math.floor(Math.random() * 12) + 6; // avanço pseudo-randômico
-    if (installerProgress >= 100) {
-      installerProgress = 100;
-      updateInstallerProgress();
-      stopInstallerProcess(true);
-    } else {
-      updateInstallerProgress();
-    }
-  }, 400);
+    // evita múltiplos intervalos
+    if (installerInterval) clearInterval(installerInterval);
+        installerInterval = setInterval(() => {
+            installerProgress += Math.floor(Math.random() * 12) + 6; // avanço pseudo-randômico
+            if (installerProgress >= 100) {
+                installerProgress = 100;
+                updateInstallerProgress();
+                stopInstallerProcess(true);
+            } else {
+                updateInstallerProgress();
+            }
+        }, 400);
 }
 
 // atualiza barra e percentual
 function updateInstallerProgress() {
-  const pct = Math.max(0, Math.min(100, installerProgress));
-  if (progressFill) progressFill.style.width = pct + "%";
-  if (progressPercent) progressPercent.textContent = pct + "%";
+    const pct = Math.max(0, Math.min(100, installerProgress));
+    if (progressFill) progressFill.style.width = pct + "%";
+    if (progressPercent) progressPercent.textContent = pct + "%";
 }
 
 // para o processo (quando concluído ou cancelado)
 function stopInstallerProcess(finished = false) {
-  if (installerInterval) { clearInterval(installerInterval); installerInterval = null; }
-  if (finished) {
-    finishedMsg.classList.remove("hidden");
-    btnNext.disabled = false;
-    btnNext.textContent = "Finish";
-  } else {
-    // reset visual se cancelou
-    installerProgress = 0;
-    updateInstallerProgress();
-  }
+    if (installerInterval) { clearInterval(installerInterval); installerInterval = null; }
+    if (finished) {
+        finishedMsg.classList.remove("hidden");
+        btnNext.disabled = false;
+        btnNext.textContent = "Finish";
+    } else {
+        // reset visual se cancelou
+        installerProgress = 0;
+        updateInstallerProgress();
+    }
 }
-
-
