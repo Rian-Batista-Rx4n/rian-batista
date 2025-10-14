@@ -4,9 +4,9 @@
     --xp-gray: #d4d0c8;
 }
 header h1, header h2 {
-  position: absolute;
-  left: -9999px;
-  visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
 }
 
 html {
