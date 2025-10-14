@@ -1,123 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Rian Batista (Rx4n), desenvolvedor fullstack e sysadmin.">
-    <link rel="shortcut icon" href="images/GrayWolf_512png.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/graywolf_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Rian Batista | Rx4n</title>
+    <title>Rx4n | Fullstack</title>
 </head>
+
 <body>
-    <audio id="meuAudio" src="sounds/minecraft_click.mp3"></audio>
-    <header id="topo">
-        <div id="topo-left">
-            <img id="logo_icon" src="images/GrayWolf_512png.png" alt="Logo Rx4n">
-        </div>
-        <div id="topo-center">
-            <span id="nome">Rian Batista</span>
-        </div>
-        <div id="topo-right">
-            <button id="audio_toggle">🔇</button>
-            <div id="menu_button"><img id="menu_icon" src="images/menu_icon.png" alt="Menu"></div>
-        </div>
+    <header>
     </header>
 
-    <nav id="menu">
-        <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contatos">Contatos</a></li>
-        </ul>
-    </nav>
+<!-- WORKSPACE -->
 
-    <section id="banner">
-        <div id="texto_1">
-            <h1 id="rian">Rian</h1>
-            <h2 id="batista">Batista</h2>
-            <p id="subtexto">Rx4n | Fullstack Developer & Sysadmin</p>
-        </div>
-        <img id="rx4n_foto" src="images/rx4n_working.jpg" alt="Rian Batista trabalhando">
-    </section>
+    <main>
+        <section class="first-section">
+             <div class="work-space-apps" id="my-computer">
+                 <img class="work-space-icons" alt="Imagem de 'Meu Computador'" src="images/my_computer.png">
+                 <p>My Computer</p>
+             </div>
 
-    <section id="sobre">
-        <img id="rx4n_foto_2" src="images/rx4n_blue.jpg" alt="Rian Batista">
-        <h2>Sobre Mim</h2>
-        <p>Sou Rian Batista, também conhecido como Rx4n. Sou um desenvolvedor fullstack com paixão por sistemas Linux, automação e segurança digital. Desde cedo tive curiosidade em entender como as coisas funcionam por trás da tela, o que me levou a explorar linguagens como Python, JavaScript e ferramentas de terminal como Termux e Bash.</p>
-        <p>Atualmente estou desenvolvendo o <strong><a href="https://github.com/Rian-Batista-Rx4n/web-files-manager-graywolfsystem" target="_blank">Gray Wolf System</a></strong>, uma central multimídia pessoal com funcionalidades como player, chat, upload e visualização de arquivos — tudo rodando em um servidor Linux pessoal.</p>
-        <p>Tenho interesse especial por <strong>cibersegurança</strong>, sistemas minimalistas, controle total do ambiente e liberdade de customização. Gosto de criar, aprender e compartilhar conhecimento — sempre buscando a próxima versão melhor de mim mesmo como dev e ser humano.</p>
-        <p>Além do código, sou apaixonado por <strong>lobos</strong>, natureza, e crio meu trabalho com esse espírito: autonomia, lealdade e força silenciosa.</p>
-    </section>
+             <div class="work-space-apps" id="bin">
+                 <img class="work-space-icons" alt="Imagem de 'Microsoft Windowns XP Bin'" src="images/bin.png">
+                 <p>Recycle Bin</p>
+             </div>
 
-    <section id="skills">
-        <h2>Habilidades</h2>
-        <div class="skills-container">
-            <div class="skill-box">
-                <h3>Linguagens</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>Bash</li>
-                    <li>HTML/CSS</li>
-                    <li>MySQL</li>
-                </ul>
-            </div>
-            <div class="skill-box">
-                <h3>Frameworks e Bibliotecas</h3>
-                <ul>
-                    <li>Flask</li>
-                    <li>Pandas</li>
-                    <li>PyAutoGui</li>
-                </ul>
-            </div>
-            <div class="skill-box">
-                <h3>Sistemas e Ferramentas</h3>
-                <ul>
-                    <li>Linux Mint</li>
-                    <li>Arch Linux</li>
-                    <li>Pacote Office</li>
-                    <li>Git & GitHub</li>
-                    <li>Termux</li>
-                </ul>
-            </div>
-            <div class="skill-box">
-                <h3>Áreas</h3>
-                <ul>
-                    <li>Fullstack Dev</li>
-                    <li>SysAdmin</li>
-                    <li>Segurança Digital (iniciante)</li>
-                    <li>Automação</li>
-                </ul>
+             <div class="work-space-apps" id="mozilla-firefox">
+                 <img class="work-space-icons" alt="Imagem de 'Mozilla FireFox'" src="images/mozilla_firefox.png">
+                 <p>Firefox</p>
+             </div>
+
+             <div class="work-space-apps" id="installer">
+                 <img class="work-space-icons" alt="Imagem de 'Gray Wolf System'" src="images/graywolf_icon.png">
+                 <p>Rx4n Install.msi</p>
+             </div>
+        </section>
+    </main>
+    
+<!-- WINDOWS -->
+
+    <div class="file-explorer-window" id="file-explorer-window">
+        <div class="file-explorer-title-bar" id="file-explorer-title-bar">
+            <div class="file-explorer-title" id="file-explorer-title">My Computer</div>
+            <div class="file-explorer-buttons" id="file-explorer-buttons">
+                <button class="explorer-btn minimize" id="explorer-btn-minimize">–</button>
+                <button class="explorer-btn maximize" id="explorer-btn-maximize">□</button>
+                <button class="explorer-btn close" id="explorer-btn-close">×</button>
             </div>
         </div>
-        <p id="texto_6">Acredito em soluções simples e eficientes. Minhas habilidades principais envolvem desenvolvimento web (especialmente com Flask e JS), automação com scripts, e administração de sistemas Linux. Gosto de criar ferramentas próprias, dominar o ambiente e aprender novas tecnologias que respeitem a liberdade do usuário.</p>
-    </section>
 
-    <section id="final">
-        <div class="caixa" id="projetos">
-            <h2>Projetos</h2>
-            <ul>
-                <li><a href="https://github.com/Rian-Batista-Rx4n/web-files-manager-graywolfsystem" target="_blank">Gray Wolf System</a></li>
-                <li><a href="https://github.com/Rian-Batista-Rx4n/Cadastro_Help" target="_blank">Página de Cadastro</a></li>
-                <li><a href="https://github.com/Rian-Batista-Rx4n/bingo" target="_blank">Bingo</a></li>
-            </ul>
+        <div class="file-explorer-menu-bar" id="file-explorer-menu-bar">
         </div>
 
-        <div class="caixa" id="contatos">
-            <h2>Contatos</h2>
-            <ul>
-                <li><img src="images/e-mail_icon.webp" alt="Email"> <a href="mailto:rx4n.rx4n@gmail.com">rx4n.rx4n@gmail.com</a></li>
-                <li><img src="images/github_icon.png" alt="GitHub"> <a href="https://github.com/Rian-Batista-Rx4n" target="_blank">GitHub</a></li>
-                <li><img src="images/linkedIn_icon.png" alt="LinkedIn"> <a href="https://www.linkedin.com/in/rian-batista-76ba3630b/" target="_blank">LinkedIn</a></li>
-                <li><img src="images/instagram_icon.png" alt="Instagram"> <a href="https://instagram.com/rx4n.rx4n" target="_blank">Instagram</a></li>
-                <li><img src="images/youtube_icon.png" alt="YouTube"> <a href="https://www.youtube.com/@Rx4n_" target="_blank">YouTube</a></li>
-            </ul>
+        <div class="file-explorer-main" id="file-explorer-main">
+            <div class="file-explorer-side-bar" id="file-explorer-side-bar">
+                <ul id="ul-list">
+                </ul>
+            </div>
+            <div class="file-explorer-body" id="file-explorer-body">
+            </div>
         </div>
-    </section>
+    </div>
 
-    <footer id="roda-pe">
-        &copy; 2025 Rian Batista - Rx4n
+<!-- FIREFOX -->
+
+    <div class="firefox-window" id="firefox-window">
+        <div class="firefox-title-bar" id="firefox-title-bar">
+            <div class="firefox-title" id="firefox-title">Mozilla Firefox</div>
+            <div class="firefox-buttons" id="firefox-buttons">
+                <button class="firefox-btn minimize" id="firefox-btn-minimize">–</button>
+                <button class="firefox-btn maximize" id="firefox-btn-maximize">□</button>
+                <button class="firefox-btn close" id="firefox-btn-close">×</button>
+            </div>
+        </div>
+
+        <div id="firefox_html">
+        </div>
+    </div>
+
+    <div class="bin-window" id="bin-window"></div>
+    <div class="text-window" id="text-window"></div>
+    <div class="wmp-window" id="wmp-window"></div>
+
+    <div class="installer-window" id="installer-window">
+        <div class="installer-title-bar" id="installer-title-bar">
+            <div class="installer-title" id="installer-title">Rx4n Setup</div>
+            <div class="installer-buttons" id="installer-buttons">
+            <button class="installer-btn minimize" id="installer-btn-minimize">–</button>
+            <button class="installer-btn maximize" id="installer-btn-maximize">□</button>
+            <button class="installer-btn close" id="installer-btn-close">×</button>
+            </div>
+        </div>
+
+        <!-- header area with icon + short text -->
+        <div class="installer-up-box" id="installer-up-box" aria-hidden="false">
+            <img class="installer-my-computer-icon" id="installer-my-computer-icon" alt="Icon" src="images/graywolf_icon.png">
+            <div class="installer-up-text" id="installer-up-text">
+            <strong>Welcome to the Rx4n Installer</strong><br>
+            Prepare to install a small demo that shows who I am.
+            </div>
+        </div>
+
+        <!-- body that contains pages -->
+        <div class="installer-body" id="installerBody">
+            <!-- PAGE 0: Welcome -->
+            <div class="installer-page" id="installer-page-0">
+            <h3>Welcome</h3>
+            <p>Welcome to the Rx4n installation wizard.<br>
+                This installer will guide you through a short demo setup.</p>
+            </div>
+
+            <!-- PAGE 1: Terms (About) -->
+            <div class="installer-page hidden" id="installer-page-1">
+            <h3>Terms & About</h3>
+            <p><!-- INSERIR SOBRE AQUI --></p>
+            <div class="installer-terms-box">
+                <textarea id="installer-terms-text" readonly>
+                    Hi! My name is Rian Batista, but you can call me Rx4n.
+
+
+                    I’m a developer passionate about technology and how things work behind the scenes — from systems and networks to the logic that keeps everything running. I have a strong focus on back-end development, where I can build processes, data handling, and dynamic systems that bring ideas to life on the front-end.
+
+                    I work mainly with Python, JavaScript, TypeScript, SQL, and Power BI using M and DAX for data analysis. I also enjoy exploring Linux environments, shell scripting, and web development with Flask.
+
+                    Curiosity drives me — I’m always learning, experimenting, and creating. One of my main personal projects is GWS, a file management and upload system designed around organization and privacy.
+
+                    Outside of coding, I’m a true nerd/geek who loves retro culture, classic games, anime, and movies that mix technology, creativity, and meaning. I have a deep admiration for wolves, the color blue, and the pursuit of knowledge. My goal is to keep evolving as a person and a professional, leaving a positive mark in the world of technology
+                </textarea>
+            </div>
+            <label class="installer-accept">
+                <input type="checkbox" id="installer-accept-checkbox"> I accept the terms and want to continue.
+            </label>
+            </div>
+
+            <!-- PAGE 2: Installing -->
+            <div class="installer-page hidden" id="installer-page-2">
+            <h3>Installing</h3>
+            <p>Installing Rx4n demo — please wait.</p>
+            <div class="progress-wrapper">
+                <div class="progress-bar" id="installer-progress-bar"><div class="progress-fill" id="installer-progress-fill" style="width:0%"></div></div>
+                <div id="installer-progress-percent">0%</div>
+            </div>
+            <div id="installer-finished-msg" class="hidden">Installation complete! Click Finish.</div>
+            </div>
+        </div>
+
+        <!-- footer buttons -->
+        <div class="installer-footer" id="installer-footer">
+            <div class="installer-footer-left">
+            <button class="installer-flat-btn" id="installer-cancel-btn">Cancel</button>
+            </div>
+            <div class="installer-footer-right">
+            <button class="installer-flat-btn" id="installer-back-btn" disabled>Back</button>
+            <button class="installer-primary-btn" id="installer-next-btn">Next</button>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+<!-- MENU -->
+
+    <div class="menu-panel-box" id="menu-panel-box"></div>
+
+<!-- PANEL BAR -->
+
+    <footer class="panel">
+        <div class="menu-panel" id="menu-panel">
+            <img class="menu-panel-icon" id="menu-panel-icon" alt="Icone de Menu" src="images/windows-xp-start-menu.png">
+        </div>
+	<div class="apps-panel" id="apps-panel">
+		
+    </div>
+        <div class="tools-panel">
+        <div class="tools-items panel-items panel-icons" id="audio">🔇</div>
+        <div class="date-panel panel-items" id="date-panel">12:30<br>10/10/2025</div>
+	</div>
     </footer>
 
     <script src="script.js"></script>
