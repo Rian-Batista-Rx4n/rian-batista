@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://SEU_USUARIO.github.io/sitemap.xml
+Sitemap: https://rian-batista-rx4n.github.io/rian-batista/sitemap.xml
