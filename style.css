@@ -53,6 +53,59 @@ li {
 
 /* INICIO DA AREA DE TRABLAHO */
 
+.clippy-container {
+    position: fixed;
+    bottom: 32px;
+    right: 20px;
+    display: block;
+    align-items: flex-end;
+    gap: 8px;
+    width: 280px;
+    animation: fadeIn 0.6s ease-out;
+    font-family: "Tahoma", sans-serif;
+    z-index: 9999;
+}
+
+.clippy-img {
+    width: 70px;
+    height: auto;
+    margin: 4px 0 4px 78%;
+}
+
+.clippy-message {
+    position: relative;
+    flex: 1;
+    background: #ece9d8;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    color: #222;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+#close-clippy {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#close-clippy:hover {
+    color: red;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
 .work-space-apps {
     width: 64px;
     height: 64px;
@@ -76,10 +129,12 @@ li {
 }
 a {
     color: black;
+    text-decoration: none;
 }
 
 a:hover {
     color: blue;
+    text-decoration: underline;
 }
 
 /* FIM DA AREA DE TRABLAHO */
@@ -296,42 +351,42 @@ a:hover {
 
 /* ---------- INSTALLER STYLES (retro-modern) ---------- */
 .installer-window {
-  position: absolute;
-  top: 120px;
-  right: 12vw;
-  width: 0px;
-  height: 0px;
-  border: 2px solid none;
-  background: var(--xp-gray);
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  border-radius: 4px;
-  box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
-  overflow: hidden;
-  transition: transform .12s ease, opacity .12s ease;
+    position: absolute;
+    top: 120px;
+    right: 12vw;
+    width: 0px;
+    height: 0px;
+    border: 2px solid none;
+    background: var(--xp-gray);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+    overflow: hidden;
+    transition: transform .12s ease, opacity .12s ease;
 }
 
 /* Title bar */
 .installer-title-bar {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background: linear-gradient(to bottom, #3a6ea5, #0a246a);
-  color: #fff;
-  height: 28px;
-  padding: 2px 6px;
-  font-weight: bold;
-  font-size: 13px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background: linear-gradient(to bottom, #3a6ea5, #0a246a);
+    color: #fff;
+    height: 28px;
+    padding: 2px 6px;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 /* Up box */
 .installer-up-box {
-  display:flex;
-  gap:12px;
-  align-items:center;
-  padding: 8px;
-  background: transparent;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    padding: 8px;
+    background: transparent;
 }
 .installer-my-computer-icon { width:48px; height:48px; margin-left:6px; }
 .installer-up-text { font-size: 13px; color: #000; }
@@ -342,57 +397,57 @@ a:hover {
 .hidden { display:none !important; }
 
 .installer-terms-box textarea {
-  width: calc(100% - 12px);
-  height: 120px;
-  resize: none;
-  padding:6px;
-  font-family: Tahoma, sans-serif;
-  font-size: 12px;
+    width: calc(100% - 12px);
+    height: 120px;
+    resize: none;
+    padding:6px;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
 }
 
 /* buttons */
 .installer-footer {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  padding:8px;
-  background: linear-gradient(#f0f0f0, #e0e0e0);
-  border-top: 1px solid #aaa;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding:8px;
+    background: linear-gradient(#f0f0f0, #e0e0e0);
+    border-top: 1px solid #aaa;
 }
 .installer-flat-btn {
-  background: #e9e9e9;
-  border: 2px solid #666;
-  padding: 6px 10px;
-  font-size: 13px;
-  cursor: pointer;
-  border-radius: 2px;
+    background: #e9e9e9;
+    border: 2px solid #666;
+    padding: 6px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 2px;
 }
 .installer-flat-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 .installer-primary-btn {
-  background: linear-gradient(#316ac5, #0a246a);
-  color: white;
-  border: 2px solid #06386a;
-  padding: 6px 12px;
-  font-size: 13px;
-  cursor: pointer;
-  border-radius: 2px;
+    background: linear-gradient(#316ac5, #0a246a);
+    color: white;
+    border: 2px solid #06386a;
+    padding: 6px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 2px;
 }
 
 /* progress */
 .progress-wrapper { display:flex; align-items:center; gap:8px; margin-top:10px; }
 .progress-bar {
-  width: 80%;
-  height: 16px;
-  background: #ddd;
-  border: 1px solid #999;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    width: 80%;
+    height: 16px;
+    background: #ddd;
+    border: 1px solid #999;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
 }
 .progress-fill {
-  height:100%;
-  width:0%;
-  background: linear-gradient(90deg,#5fb0ff,#1b76ff);
-  transition: width .3s linear;
+    height:100%;
+    width:0%;
+    background: linear-gradient(90deg,#5fb0ff,#1b76ff);
+    transition: width .3s linear;
 }
 #installer-progress-percent { width:40px; font-size:12px; }
 
@@ -402,20 +457,124 @@ a:hover {
 
 /* FIM DAS JANELAS */
 
+
+
 /* INICIO DA BARRA */
 
-.menu-panel-box {
-   position: fixed;
-   bottom: 32px;
-   left: -4px;
-   width: 0px;
-   height: 0px;
-   background: white;
-   border: 0px solid none;
-   transition: ease 0.1s;
-   z-index: 9;
-   transition: 0.2s;
+#start-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-family: "Tahoma", sans-serif;
+    width: 96px;
 }
+
+#start-button img {
+    width: 20px;
+    height: 20px;
+}
+
+#start-menu {
+    position: fixed;
+    bottom: 32px;
+    left: 0;
+    width: 340px;
+    height: 400px;
+    background: linear-gradient(to bottom, #e8ecf3, #d6e0f2);
+    border: 2px solid #355c91;
+    border-radius: 8px px 0 0;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    font-family: "Tahoma", sans-serif;
+    z-index: 999;
+}
+
+.hidden { display: none; }
+
+.start-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(to right, #3a6ea5, #4a7dc0);
+    color: white;
+}
+
+.start-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.start-header span{
+    cursor: pointer;
+}
+
+.start-body {
+    display: flex;
+    flex: 1;
+}
+
+.left-menu, .right-menu {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    flex: 1;
+}
+
+.left-menu li, .right-menu li {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.left-menu li:hover, .right-menu li:hover {
+    background-color: #c9d7f3;
+    border-radius: 4px;
+}
+
+.start-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background: #d6e0f2;
+    border-top: 1px solid #9ca3af;
+}
+
+.start-footer button {
+    background: linear-gradient(to bottom, #fff, #d8e4fa);
+    border: 1px solid #9ca3af;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.start-footer button:hover {
+    background: #c7d8f0;
+}
+
+.menu-icons {
+    width: 32px;
+}
+
+.start-body a {
+    text-decoration: none;
+}
+
+.start-body li:hover {
+    color: blue;
+}
+
+/* === PANEL ITEMS === */
 
 .apps-panel {
     position: absolute;
