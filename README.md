@@ -1,74 +1,85 @@
-# 🪟 Rx4n Portfolio — Windows XP Inspired Website
+# 🪟 Rian Batista (Rx4n) — Windows XP Inspired Portfolio
 
-Welcome to my personal portfolio — a creative web project inspired by the classic look and feel of **Windows XP**.
+Welcome to my **personal portfolio**, a creative and nostalgic web project inspired by the classic look and feel of **Windows XP** 🖥️.
 
-This project isn’t just a portfolio — it’s a nostalgic, interactive experience that reimagines the old desktop environment in modern web form.  
-Each icon, window, and app on the screen represents a different section of my digital world.
+- 🌐 Access here: **Portfolio:** [rian-batista-rx4n.github.io/rian-batista](https://rian-batista-rx4n.github.io/rian-batista/)
+
+This isn’t just a portfolio — it’s a fully interactive **retro desktop experience** that blends **old-school design** with **modern web development**.  
+Each icon, window, and app on the screen represents a different part of my digital world.
 
 ---
 
 ## 💡 Concept
 
-The goal of this portfolio is to blend **retro design** with **modern web development**, creating a fully interactive “desktop” where you can explore my projects, social media, and personal story — all while feeling like you’re back in the early 2000s.
+The goal of this project is to merge **retro aesthetics** with **modern web technologies**, recreating the Windows XP environment directly in your browser — no emulators, no frameworks, just **pure code**.
 
-Everything you see is built from scratch using **HTML**, **CSS**, and **JavaScript** (no frameworks), to keep the charm of classic web simplicity.
+Every element is built from scratch using **HTML**, **CSS**, and **JavaScript**, capturing the nostalgic charm of early 2000s computing while keeping everything responsive and modern.
 
 ---
 
 ## 🗂️ Features
 
 ### 🖥️ Desktop Environment
-A simulated workspace with classic XP icons:
-- **My Computer** – Opens a file explorer with categories like Documents, Music, Images, and Downloads.  
-- **Recycle Bin** – Contains links to my social media (Instagram, YouTube, etc.).  
-- **Firefox** – A retro-styled browser window containing my portfolio page.  
-- **Rx4n Installer.msi** – A creative “installer” window that shares my personal background, like a software setup wizard.
+A simulated XP workspace featuring:
+- 🖱️ **My Computer** – Opens a file explorer with categories like *Documents*, *Music*, *Images*, and *Downloads*  
+- 🗑️ **Recycle Bin** – Contains links to my social media (Instagram, YouTube, etc.)  
+- 🌐 **Firefox** – A retro-styled browser window that displays my portfolio content  
+- 💿 **Rx4n Installer.msi** – A creative setup wizard that shares my personal background
 
 ### ⚙️ File Explorer
-A functional window interface where each folder opens specific content:
-- `C:/Documents` → Links to my professional accounts (GitHub, LinkedIn)
-- `C:/Images` → Personal or design-related images
-- `C:/Music` & `C:/Videos` → Media previews (MP3/MP4)
-- `C:/Downloads` → Links to downloadable projects or demos
+Fully functional folder system:
+- `C:/Documents` → Links to professional accounts (GitHub, LinkedIn)  
+- `C:/Images` → Personal or design-related visuals  
+- `C:/Music` & `C:/Videos` → Audio/video previews (MP3/MP4)  
+- `C:/Downloads` → Links to demos and downloadable projects  
 
 ### 🧩 Interactive UI
-- Movable and resizable windows (coming soon)
-- Real-time clock and date on the taskbar
-- Hover effects and transitions to mimic classic OS interactions
-- Start menu (in progress) with future customization options
+- Movable and resizable windows *(coming soon)*  
+- Real-time clock and date on the taskbar  
+- Authentic XP hover effects and transitions  
+- Custom **Start Menu** *(in progress)*  
 
 ---
 
 ## 🧱 Built With
-- **HTML5**
-- **CSS3**
-- **JavaScript (Vanilla)**
-- Assets inspired by Windows XP UI design
+
+- **HTML5** — Structure  
+- **CSS3** — Retro design & UI styling  
+- **JavaScript (Vanilla)** — Window logic, events & interactivity  
+- **Assets** — Inspired by the original Windows XP interface  
 
 ---
 
-## 🐺 About Me
+## 🧑‍💻 About the Developer
 
-I’m a junior fullstack developer passionate about creative technology, open-source projects, and blending nostalgia with modern design.
+👋 Hi, I’m **Rian Batista**, also known online as **Rx4n** — a **Junior FullStack Developer** passionate about creative tech, open-source projects, and nostalgic digital design.
 
----
-
-## 📬 Contact
-
-- **GitHub:** [github.com](https://github.com/Rian-Batista-Rx4n/)
-- **Portfolio:** [www.rx4n.com](https://rian-batista-rx4n.github.io/rian-batista/)
+I love experimenting with front-end experiences that mix **aesthetic storytelling** with **technical precision**.
 
 ---
 
-### 💾 Status
-This project is a **work in progress** — more features, animations, and apps will be added soon.  
-Stay tuned for updates and feel free to star ⭐ the repo if you like it!
+## 🔗 Links & Contact
+
+- 🧑‍💻 **GitHub:** [github.com/Rian-Batista-Rx4n](https://github.com/Rian-Batista-Rx4n)  
+- 🌐 **Portfolio:** [rian-batista-rx4n.github.io/rian-batista](https://rian-batista-rx4n.github.io/rian-batista/)  
+- 📧 **Email:** [rx4n.rx4n@gmail.com](mailto:rx4n.rx4n@gmail.com)  
 
 ---
 
-### 🧠 Fun Fact
-This portfolio runs entirely in the browser — no backend, no frameworks, just pure code and creativity.
+## 💾 Project Status
+
+🚧 This project is a **work in progress** — new apps, animations, and customization features are coming soon.  
+⭐ Don’t forget to **star** the repo if you enjoy the retro vibes!
 
 ---
+
+## 🧠 Fun Fact
+
+> This portfolio runs entirely in the browser — no backend, no frameworks, just pure code and creativity.  
 
 > *“Old tech never dies — it just boots up again.”*
+
+---
+
+### 🏷️ Tags / SEO
+`Rian Batista`, `Rx4n`, `Portfolio`, `Windows XP`, `Retro Web`, `HTML CSS JS`, `Vanilla JavaScript`, `Frontend Developer`, `Creative Coding`, `Nostalgia UI`, `GitHub Pages`
