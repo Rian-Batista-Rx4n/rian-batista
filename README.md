@@ -62,7 +62,8 @@ I love experimenting with front-end experiences that mix **aesthetic storytellin
 
 - 🧑‍💻 **GitHub:** [github.com/Rian-Batista-Rx4n](https://github.com/Rian-Batista-Rx4n)  
 - 🌐 **Portfolio:** [rian-batista-rx4n.github.io/rian-batista](https://rian-batista-rx4n.github.io/rian-batista/)  
-- 📧 **Email:** [rx4n.rx4n@gmail.com](mailto:rx4n.rx4n@gmail.com)  
+- 📧 **Email:** [rx4n.rx4n@gmail.com](mailto:rx4n.rx4n@gmail.com) 
+- 💼 **LinkedIn:** [linkedin.com/in/rian-batista](https://www.linkedin.com/in/rian-batista/)  
 
 ---
 
