@@ -47,7 +47,7 @@
 
 <body>
     <header>
-  		<h1>Rian Batista — Fullstack Developer & Tech Enthusiast</h1>
+  		<h1>Rian Batista — Full Stack Developer & Tech Enthusiast</h1>
   		<h2>Python | Flask | JavaScript | HTML | CSS | Power BI | DAX | M | Linux | SQL</h2>
 	</header>
 
@@ -84,7 +84,7 @@
         </section>
     </main>
     
-<!-- WINDOWS -->
+<!-- EXPLORER -->
 
     <div class="file-explorer-window" id="file-explorer-window">
         <div class="file-explorer-title-bar" id="file-explorer-title-bar">
@@ -122,13 +122,42 @@
             </div>
         </div>
 
-        <div id="firefox_html">
+        <div id="firefox-browser" class="firefox-browser">
+            <div class="firefox-toolbar" id="firefox-toolbar">
+                <button class="nav-btn" id="nav-btn1">⬅</button>
+                <button class="nav-btn" id="nav-btn2">➡</button>
+                <button class="nav-btn" id="nav-btn3">⟳</button>
+                <input type="text" id="firefox-url" value="http://rx4n.local/portfolio" readonly>
+        </div>
+
+            <div id="firefox_html" class="firefox-content">
+                <!-- Aqui vai o site interno -->
+            </div>
         </div>
     </div>
 
-    <div class="bin-window" id="bin-window"></div>
-    <div class="text-window" id="text-window"></div>
-    <div class="wmp-window" id="wmp-window"></div>
+<!-- NOTEPAD -->
+
+    <div class="notepad-window" id="notepad-window">
+        <div class="notepad-title-bar" id="notepad-title-bar">
+            <div class="notepad-title" id="notepad-title">Notepad - Untitled.txt</div>
+            <div class="notepad-buttons">
+                <button class="notepad-btn minimize" id="notepad-btn-minimize" onclick="toggleNotepad()">–</button>
+                <button class="notepad-btn maximize" id="notepad-btn-maximize">□</button>
+                <button class="notepad-btn close" id="notepad-btn-close">×</button>
+            </div>
+        </div>
+
+    <div class="notepad-menu-bar">
+        <span id="notepad-new">File</span>
+        <span id="notepad-save">Save</span>
+        <span id="notepad-open">Open</span>
+    </div>
+
+  <textarea id="notepad-textarea" class="notepad-textarea" placeholder="Type something..."></textarea>
+</div>
+
+<!-- INSTALADOR -->
 
     <div class="installer-window" id="installer-window">
         <div class="installer-title-bar" id="installer-title-bar">
@@ -229,9 +258,9 @@
 
         <ul class="right-menu">
           <li onclick="openSettings()">🧩 Settings</li>
-          <li id="input-my-documents">My Documents</li>
-          <li id="input-my-pictures">My Pictures</li>
-          <li id="input-my-music">My Music</li>
+          <li onclick="window.open('https://github.com/Rian-Batista-Rx4n/')" id="input-my-documents">My GitHub</li>
+          <li onclick="window.open('https://www.linkedin.com/in/rian-batista-rx4n')" id="input-my-pictures">My LinkedIn</li>
+          <li onclick="window.open('https://www.instagram.com/rx4n.rx4n/')" id="input-my-music">My Instagram</li>
           <li id="input-my-computer">My Computer</li>
         </ul>
       </div>
