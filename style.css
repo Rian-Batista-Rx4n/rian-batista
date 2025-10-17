@@ -621,3 +621,169 @@ a:hover {
 }
 
 /* FIM DA BARRA */
+
+
+
+/* ===== FIREFOX RETRÔ ===== */
+
+.firefox-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, #3a6ea5, #0a246a);
+  color: white;
+  padding: 0px 0px;
+  font-family: Tahoma, sans-serif;
+  font-size: 0px;
+  height: 24px;
+  border-bottom: 1px solid #002c6a;
+}
+
+.firefox-browser {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 24px);
+  background: #ece9d8;
+}
+
+.firefox-toolbar {
+  background: #d4d0c8;
+  padding: 0px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  border-bottom: 1px solid #aaa;
+}
+
+.nav-btn {
+  background: #ece9d8;
+  border: 0px solid #888;
+  font-size: 0px;
+  cursor: pointer;
+  padding: 0px 0px;
+}
+
+.nav-btn:hover {
+  background: #bcd;
+}
+
+#firefox-url {
+  flex: 1;
+  border: 0px solid #666;
+  padding: 0px;
+  background: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 0px;
+}
+
+.firefox-content {
+  flex: 1;
+  padding: 10px;
+  background: none;
+  color: black;
+  overflow-y: auto;
+}
+
+/* ==== PORTFÓLIO RETRÔ === */
+.retro-page {
+  font-family: "Comic Sans MS", cursive;
+  background: url('images/bg_retro.gif');
+  padding: 20px;
+  border: 2px solid #0000aa;
+  box-shadow: 4px 4px 0 #888;
+}
+
+.retro-page h1 {
+  color: red;
+  text-shadow: 1px 1px yellow;
+  text-align: center;
+  animation: blink 1s infinite;
+}
+
+.retro-page p {
+  color: black;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.retro-link {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+.retro-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes blink {
+  50% { opacity: 0.3; }
+}
+
+/* notepad ================ */
+
+/* ===== NOTEPAD RETRÔ ===== */
+.notepad-window {
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: 0.1s;
+  border-radius: 3px;
+  overflow: hidden;
+  color: black;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+.notepad-title-bar {
+  background: linear-gradient(to bottom, #3a6ea5, #0a246a);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 26px;
+  font-size: 13px;
+  padding: 2px 6px;
+}
+
+.notepad-buttons button {
+  width: 22px;
+  height: 20px;
+  background: #d4d0c8;
+  border: 1px solid #003366;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.notepad-btn.close {
+  background: red;
+  color: white;
+}
+
+.notepad-menu-bar {
+  background: #ece9d8;
+  border-bottom: 1px solid #aaa;
+  padding: 3px 6px;
+  font-size: 12px;
+  color: black;
+}
+
+.notepad-textarea {
+  flex: 1;
+  border: none;
+  resize: none;
+  outline: none;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  padding: 8px;
+  background: white;
+  color: black;
+}
+
