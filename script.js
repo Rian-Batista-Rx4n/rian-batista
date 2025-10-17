@@ -113,11 +113,24 @@ const firefoxWindow = document.getElementById("firefox-window")
 const firefoxTitleBar = document.getElementById("firefox-title-bar")
 const firefox_html = document.getElementById("firefox_html")
 
+const firefox_toolbar = document.getElementById("firefox-toolbar")
+const nav_btn1 = document.getElementById("nav-btn1")
+const nav_btn2 = document.getElementById("nav-btn2")
+const nav_btn3 = document.getElementById("nav-btn3")
+const firefox_url = document.getElementById("firefox-url")
+
 // === INSTALLER ITENS ===
 const installerWindow = document.getElementById("installer-window")
 const installerTitleBar = document.getElementById("installer-title-bar")
 const installerBody = document.getElementById("installerBody")
 const upBox = document.getElementById("installer-up-box");
+
+// === NOTEPAD ITENS ===
+const notepadBtn = document.getElementById("inputNotepad");
+const notepadWindow = document.getElementById("notepad-window");
+const notepadClose = document.getElementById("notepad-btn-close");
+const notepadTextarea = document.getElementById("notepad-textarea");
+
 
 // === MENU ITENS ===
 const inputMyComputer = document.getElementById("input-my-computer")
@@ -138,10 +151,13 @@ let actualDirectoryIndex = 0;
 let actualUser_name = `Rx4n`;
 let actualUser_img = 0;
 const totalImgs = 5;
+let notepadIcon = false;
+let notepadFiles = [];
+let currentTxtIndex = null;
 
 
 
-const document_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="Internet Explorer Icon" src="images/internet_explorer.png"><a href="https://github.com/Rian-Batista-Rx4n/">GitHub.url</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="Internet Explorer Icon" src="images/internet_explorer.png"><a href="https://www.linkedin.com/in/rian-batista/">LinkedIn.url</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/notepad.png">readme.txt</div>`
+const document_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="Internet Explorer Icon" src="images/internet_explorer.png"><a href="https://github.com/Rian-Batista-Rx4n/">GitHub.url</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="Internet Explorer Icon" src="images/internet_explorer.png"><a href="https://www.linkedin.com/in/rian-batista/">LinkedIn.url</a></div><div class="itemInsideExplorer" id="readme.txt" onclick="readme()"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/notepad.png">readme.txt</div>`
 const download_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/windowns_icon.png"><a href="https://github.com/Rian-Batista-Rx4n/GWS/">GWS.exe</a></div><div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/windowns_icon.png"><a href="https://github.com/Rian-Batista-Rx4n/fleet-manager/">Fleet Manager.exe</a></div>`
 const music_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/notepad.png">Under Construction.txt</div>`
 const image_html = `<div class="itemInsideExplorer"><img class="itemInsideExplorerIcon" id="itemInsideExplorerIcon" alt="test" src="images/my_computer.png"><a href="https://www.instagram.com/rx4n.rx4n/">Instagram.png</a></div>`
@@ -189,12 +205,21 @@ installerCloseBtn.addEventListener("click", closeInstaller)
 inputMyComputer.addEventListener("click", openExplorer);
 inputFirefox.addEventListener("click", openFirefox);
 
+notepadBtn.addEventListener("click", openNotepad);
+notepadClose.addEventListener("click", closeNotepad);
+
 user_pic.addEventListener("click", changeUserPic)
 
 
 
 
 // === FUNÇÕES ===
+
+function readme() {
+    const notepad_title = document.getElementById("notepad-title")
+    notepad_title.innerHTML = `Notepad - readme.txt`
+    openNotepad()
+}
 
 function changeUserPic() {
     const userPic = document.getElementById("user-pic");
@@ -278,7 +303,7 @@ function applyExplorerStyles(isVisible) {
     const border = (v) => (isVisible ? v : "0px solid transparent");
 
     fileWindow.style.width = isVisible ? "88vw" : "0px";
-    fileWindow.style.height = isVisible ? "85%" : "0px";
+    fileWindow.style.height = isVisible ? "83%" : "0px";
     fileWindow.style.border = border("2px solid #0a246a");
     fileWindow.style.background = bg("#d4d0c8");
 
@@ -409,7 +434,7 @@ function applyFirefoxStyles(isVisible) {
     const border = (v) => (isVisible ? v : "0px solid transparent");
 
     firefoxWindow.style.width = isVisible ? "90%" : "0px";
-    firefoxWindow.style.height = isVisible ? "90%" : "0px";
+    firefoxWindow.style.height = isVisible ? "82%" : "0px";
     firefoxWindow.style.border = border("2px solid #0a246a");
     firefoxWindow.style.background = bg("#ffffff");
 
@@ -428,12 +453,47 @@ function applyFirefoxStyles(isVisible) {
         btn.style.fontSize = visible("14px");
     });
     if (isVisible) {
-	      firefox_html.innerHTML = `             <h2>Hello, i'm Rx4n.</h2>
-             <h3>Welcome to my Website!</h3>`
-    } else {
-	      firefox_html.innerHTML = ``
-    }
+        firefox_toolbar.style.padding = `4px`
+        nav_btn1.style.fontSize = `13px`
+        nav_btn1.style.padding = `2px 6px`
+        nav_btn2.style.fontSize = `13px`
+        nav_btn2.style.padding = `2px 6px`
+        nav_btn3.style.fontSize = `13px`
+        nav_btn3.style.padding = `2px 6px`
+        firefox_url.style.border = `1px solid #666`
+        firefox_url.style.padding = `3px`
+        firefox_url.style.fontSize = `12px`
+        firefox_html.style.padding = `10px`
+        firefox_html.style.background = `white`
 
+        firefox_html.innerHTML = `
+  <div class="retro-page">
+    <h1>WELCOME TO RX4N'S RETRO ZONE 💾</h1>
+    <p>Hello traveler! You’ve entered a nostalgic dimension where creativity meets old-school design.</p>
+    <p>This portfolio is built like Windows XP — because sometimes the classics never die.</p>
+    <p><strong>Explore my projects below:</strong></p>
+    <a href="https://github.com/Rian-Batista-Rx4n" class="retro-link">💻 GitHub</a>
+    <a href="https://www.linkedin.com/in/rian-batista-rx4n" class="retro-link">🔗 LinkedIn</a>
+    <a href="https://www.instagram.com/rx4n.rx4n/" class="retro-link">🎥 Instagram</a>
+    <p><em>Best viewed in Internet Explorer 6.0 or Mozilla Firefox 1.0</em></p>
+  </div>`
+
+    } else {
+        firefox_html.innerHTML = ``
+
+        firefox_toolbar.style.padding = `0px`
+        nav_btn1.style.fontSize = `0px`
+        nav_btn1.style.padding = `0px`
+        nav_btn2.style.fontSize = `0px`
+        nav_btn2.style.padding = `0px`
+        nav_btn3.style.fontSize = `0px`
+        nav_btn3.style.padding = `0px`
+        firefox_url.style.border = `0px solid #666`
+        firefox_url.style.padding = `0px`
+        firefox_url.style.fontSize = `0px`
+        firefox_html.style.padding = `0px`
+        firefox_html.style.background = `rgba(0, 0, 0, 0)`
+    }
 }
 
 // Limpa completamente o conteúdo e esconde
@@ -616,4 +676,62 @@ function stopInstallerProcess(finished = false) {
         installerProgress = 0;
         updateInstallerProgress();
     }
+}
+
+// === NOTEPAD FUNCTION ===
+
+function openNotepad() {
+  if (notepadIcon) return;
+  notepadIcon = true;
+
+  // Adiciona ícone no painel
+  const notepadApp = document.createElement("div");
+  notepadApp.className = "app-panel-icon panel-items panel-icons";
+  notepadApp.id = "notepad-app";
+  notepadApp.innerHTML = `<img class="panel-items panel-icons" src="images/notepad.png" alt="Notepad Icon">`;
+  appPanel.appendChild(notepadApp);
+  notepadApp.addEventListener("click", toggleNotepad);
+
+  applyNotepadStyles(true);
+  
+}
+
+function toggleNotepad() {
+  notepadIcon = !notepadIcon;
+  applyNotepadStyles(notepadIcon);
+}
+
+function closeNotepad() {
+  notepadIcon = false;
+  const notepad_title = document.getElementById("notepad-title")
+  notepad_title.innerHTML = `Notepad - Untitled.txt`
+  appPanel.querySelector("#notepad-app")?.remove();
+  applyNotepadStyles(false);
+}
+
+// Estilos ao abrir/fechar
+function applyNotepadStyles(isVisible) {
+  notepadWindow.style.width = isVisible ? "50vw" : "0";
+  notepadWindow.style.height = isVisible ? "50vh" : "0";
+  notepadWindow.style.border = isVisible ? "2px solid #0a246a" : "0 solid transparent";
+  notepadWindow.style.background = isVisible ? "white" : "none";
+}
+
+// === Funções de leitura/salvamento ===
+const txtDatabase = []; // simula arquivos locais
+
+function createTxtFile(name, content) {
+  txtDatabase.push({ name, content });
+}
+
+function readTxtFile(index) {
+  if (txtDatabase[index]) {
+    notepadTextarea.value = txtDatabase[index].content;
+  }
+}
+
+function saveTxtFile(name) {
+  const content = notepadTextarea.value;
+  createTxtFile(name, content);
+  alert(`Saved "${name}" successfully!`);
 }
